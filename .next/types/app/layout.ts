@@ -1,4 +1,4 @@
-// File: C:\Users\JERE\Projects\taf-project-edited\app\layout.tsx
+// File: C:\Users\JERE\Projects\taf-website\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
