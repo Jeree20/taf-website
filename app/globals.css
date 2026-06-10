@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-dm-sans);
+    @apply text-base text-maroon-deep bg-white overflow-x-hidden;
+    font-weight: 400;
+  }
+
+  /* Only set heading defaults without overriding component classes */
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair);
+    font-weight: 900;
+    @apply text-maroon-deep leading-tight;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+    color: rgb(61 10 10 / 0.7);
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-sky-taf;
+  }
+
+  /* Smooth image loading */
+  img {
+    @apply select-none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+
+  /* Dot pattern utilities */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(245,197,24,0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .bg-dot-pattern-light {
+    background-image: radial-gradient(circle, rgba(139,26,26,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .bg-dot-pattern-white {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Section transitions */
+  .section-transition {
+    @apply transition-all duration-700 ease-out;
+  }
+}
